@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Availability — Eleven Essex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    body { opacity: 0; animation: pageFadeIn 0.9s ease 0.1s forwards; }
+    @keyframes pageFadeIn { to { opacity: 1; } }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: #625B71;
+      background: #fff;
+    }
+
+    /* ── Nav ── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 48px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: #625B71;
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 36px;
+    }
+
+    nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #625B71;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover { opacity: 0.5; }
+
+    /* ── Hero ── */
+    .hero {
+      text-align: center;
+      padding: 72px 48px 56px;
+    }
+
+    .hero h1 {
+      font-family: 'Crimson Text', serif;
+      color: #133E61;
+      font-size: clamp(56px, 8vw, 96px);
+      font-weight: 400;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+
+    .hero p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ── Residences Grid ── */
+    .residences {
+      padding: 0 48px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .residences-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    /* Card */
+    .card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+    }
+
+    .card-header {
+      background: #133E61;
+      color: #fff;
+      padding: 20px 28px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .card-floorplan {
+      background: #fff;
+      width: 100%;
+      padding: 40px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-floorplan img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .card-bottom {
+      background: #133E61;
+      padding: 28px 28px 32px;
+      color: #fff;
+    }
+
+    .card-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .card-info .bed-bath {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .card-info .price {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .card-amenities h3 {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .amenities-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 16px;
+      list-style: none;
+    }
+
+    .amenities-list li {
+      font-size: 14px;
+      color: #fff;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .amenities-list li::before {
+      content: '•';
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    /* ── Learn More ── */
+    .learn-more {
+      text-align: center;
+      padding: 80px 48px 100px;
+    }
+
+    .learn-more h2 {
+      font-family: 'Crimson Text', serif;
+      color: #133E61;
+      font-size: clamp(48px, 6vw, 80px);
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .learn-more p {
+      font-size: 14px;
+      color: #555;
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .btn-contact {
+      display: inline-block;
+      padding: 13px 36px;
+      border: 1.5px solid #1a1a1a;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: #625B71;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn-contact:hover {
+      background: #133E61;
+      border-color: #133E61;
+      color: #fff;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid #eee;
+      padding: 20px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .footer-tpc {
+      width: 40px;
+      height: 40px;
+      border: 2px solid #133E61;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: #133E61;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: #888;
+    }
+
+    .footer-right {
+      font-size: 11px;
+      color: #888;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      header { padding: 18px 24px; }
+      .hero { padding: 48px 24px 40px; }
+      .residences { padding: 0 24px 60px; }
+      .residences-grid { grid-template-columns: 1fr; }
+      .learn-more { padding: 60px 24px 80px; }
+      footer { padding: 20px 24px; }
+      .footer-center { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <header>
+    <a href="index.html" class="nav-logo">Eleven Essex</a>
+    <nav>
+      <a href="availability.html">Availability</a>
+      <a href="#">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero reveal">
+      <h1>Availability</h1>
+      <p>Contact the sales team for more information.</p>
+    </section>
+
+    <!-- Residences -->
+    <section class="residences">
+      <div class="residences-grid reveal">
+
+        <!-- Residence 2 -->
+        <div class="card">
+          <div class="card-header">Residence 2</div>
+          <div class="card-floorplan">
+            <img src="images/floorplan-2.png" alt="Residence 2 Floor Plan" />
+          </div>
+          <div class="card-bottom">
+            <div class="card-info">
+              <span class="bed-bath">2 Bed / 2 Bath</span>
+              <span class="price">$10,000/mo</span>
+            </div>
+            <div class="card-amenities">
+              <h3>Amenities</h3>
+              <ul class="amenities-list">
+                <li>Private balcony</li>
+                <li>Floor to ceiling windows</li>
+                <li>Direct elevator access to unit</li>
+                <li>Unobstructed park views</li>
+                <li>Toto washlets bidets</li>
+                <li>In unit washer/dryer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Residence 3 -->
+        <div class="card">
+          <div class="card-header">Residence 3</div>
+          <div class="card-floorplan">
+            <img src="images/floorplan-2.png" alt="Residence 3 Floor Plan" />
+          </div>
+          <div class="card-bottom">
+            <div class="card-info">
+              <span class="bed-bath">3 Beds / 2 Baths</span>
+              <span class="price">$13,000/mo</span>
+            </div>
+            <div class="card-amenities">
+              <h3>Amenities</h3>
+              <ul class="amenities-list">
+                <li>Private balcony</li>
+                <li>Floor to ceiling windows</li>
+                <li>Direct elevator access to unit</li>
+                <li>Unobstructed park views</li>
+                <li>Toto washlets bidets</li>
+                <li>In unit washer/dryer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Learn More -->
+    <section class="learn-more reveal">
+      <h2>Learn more</h2>
+      <p>Our apartments in Manhattan reflect the essence of timeless elegance, thoughtfully designed with premium materials, refined craftsmanship, and a sense of effortless livability.</p>
+      <a href="#" class="btn-contact">Contact Us</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <div class="footer-tpc">TPC</div>
+      <span class="footer-copy">© Triumph Properties Corp. &nbsp; 2025</span>
+    </div>
+    <div class="footer-right">All Rights Reserved</div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
