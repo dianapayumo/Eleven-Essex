@@ -88,7 +88,7 @@
 
     .residences-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 24px;
     }
 
@@ -156,9 +156,10 @@
 
     .amenities-list {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px 16px;
+      grid-template-columns: auto auto;
+      gap: 8px 32px;
       list-style: none;
+      justify-content: center;
     }
 
     .amenities-list li {
@@ -167,12 +168,52 @@
       display: flex;
       align-items: flex-start;
       gap: 8px;
+      text-align: left;
     }
 
     .amenities-list li::before {
       content: '•';
       color: #fff;
       flex-shrink: 0;
+    }
+
+    /* ── Fees ── */
+    .fees-section {
+      padding: 0 48px 40px;
+    }
+
+    .fees-heading {
+      font-size: 22px;
+      font-weight: 700;
+      color: #1a2e4a;
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+    }
+
+    .fees-subheading {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a2e4a;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .fees-list {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .fees-list li {
+      font-size: 14px;
+      color: #444;
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .fee-label {
+      font-weight: 600;
+      color: #1a2e4a;
+      margin-right: 4px;
     }
 
     /* ── Learn More ── */
@@ -341,6 +382,29 @@
         </div>
 
       </div>
+
+      <div style="padding-top: 30px;"></div>
+      <hr style="border: none; border-top: 1px solid #ccc; margin: 0 48px;">
+      <div style="padding-top: 30px;"></div>
+
+      <div class="fees-section">
+        <h2 class="fees-heading">FEES</h2>
+
+        <h3 class="fees-subheading">REQUIRED FEES</h3>
+        <ul class="fees-list">
+          <li><span class="fee-label">Application Fee:</span> $50 per person (non-refundable)</li>
+          <li><span class="fee-label">Lease Signing:</span> First month's rent and one month's security deposit due upon application approval</li>
+          <li><span class="fee-label">Moving Fees:</span> $500</li>
+          <li><span class="fee-label">Moving Refundable Deposit:</span> $1,000</li>
+          <li><span class="fee-label">Broker Fee:</span> None</li>
+        </ul>
+
+        <h3 class="fees-subheading">MONTHLY FEES</h3>
+        <ul class="fees-list">
+          <li><span class="fee-label">Utilities:</span> Tenants are responsible for electricity, cable, and internet (based on usage)</li>
+        </ul>
+      </div>
+
     </section>
 
     <!-- Learn More -->
