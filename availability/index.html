@@ -250,6 +250,18 @@
 
     .gallery-dot.active { background: #133E61; }
 
+    /* ── Card + Fees Row ── */
+    .card-fees-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 700px) {
+      .card-fees-row { grid-template-columns: 1fr; }
+    }
+
     /* ── Fees ── */
     .fees-section {
       padding: 0 48px 40px;
@@ -419,7 +431,7 @@
         <div class="gallery-dots" id="galleryDots"></div>
       </div>
 
-      <div class="residences-grid reveal">
+      <div class="card-fees-row reveal">
 
         <!-- Residence 3 -->
         <div class="card">
@@ -450,21 +462,18 @@
           </div>
         </div>
 
-      </div>
-
-      <hr style="border: none; border-top: 1px solid #ccc; margin: 0;">
-
-      <div class="fees-section" style="padding-top: 56px;">
-        <h2 class="fees-heading">FEES</h2>
-
-        <h3 class="fees-subheading">REQUIRED FEES</h3>
-        <ul class="fees-list">
-          <li><span class="fee-label">Application Fee:</span> $50 per person (non-refundable)</li>
-          <li><span class="fee-label">Lease Signing:</span> First month's rent and one month's security deposit due upon application approval</li>
-          <li><span class="fee-label">Moving Fees:</span> $500</li>
-          <li><span class="fee-label">Moving Refundable Deposit:</span> $1,000</li>
-          <li><span class="fee-label">Broker Fee:</span> None</li>
-        </ul>
+        <!-- Fees -->
+        <div class="fees-section">
+          <h2 class="fees-heading">FEES</h2>
+          <h3 class="fees-subheading">REQUIRED FEES</h3>
+          <ul class="fees-list">
+            <li><span class="fee-label">Application Fee:</span> $50 per person (non-refundable)</li>
+            <li><span class="fee-label">Lease Signing:</span> First month's rent and one month's security deposit due upon application approval</li>
+            <li><span class="fee-label">Moving Fees:</span> $500</li>
+            <li><span class="fee-label">Moving Refundable Deposit:</span> $1,000</li>
+            <li><span class="fee-label">Broker Fee:</span> None</li>
+          </ul>
+        </div>
 
       </div>
 
