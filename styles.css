@@ -252,7 +252,7 @@ body {
 
 .btn-contact {
   display: inline-block;
-  background: #2d5a55;
+  background: #133E61;
   color: #fff;
   text-decoration: none;
   padding: 14px 32px;
@@ -264,7 +264,7 @@ body {
 }
 
 .btn-contact:hover {
-  background: #1e3e3b;
+  background: #0e2d47;
 }
 
 /* ── Footer ── */
@@ -285,13 +285,8 @@ body {
 }
 
 .footer-logo {
-  background: #1a2a3a;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 6px 10px;
-  border-radius: 4px;
-  letter-spacing: 0.05em;
+  height: 36px;
+  width: auto;
 }
 
 .footer-right {
