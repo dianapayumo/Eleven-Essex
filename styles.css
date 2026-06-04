@@ -20,6 +20,17 @@ body {
   top: 0;
   background: #fff;
   z-index: 100;
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar.scrolled {
+  background: #133E61;
+}
+
+.navbar.scrolled .nav-logo,
+.navbar.scrolled .nav-links a {
+  color: #fff;
+  font-weight: 600;
 }
 
 .nav-logo {
