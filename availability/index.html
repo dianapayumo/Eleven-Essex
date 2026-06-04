@@ -34,6 +34,22 @@
       justify-content: space-between;
       padding: 22px 48px;
       border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    header.scrolled {
+      background: #133E61;
+      border-bottom-color: transparent;
+    }
+
+    header.scrolled .nav-logo,
+    header.scrolled nav a {
+      color: #fff;
+      font-weight: 600;
     }
 
     .nav-logo {
@@ -499,6 +515,13 @@
     </div>
     <div class="footer-right">All Rights Reserved</div>
   </footer>
+
+  <script>
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
 
   <script>
     const observer = new IntersectionObserver((entries) => {
