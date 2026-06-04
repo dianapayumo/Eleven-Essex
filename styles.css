@@ -294,6 +294,11 @@ body {
   color: #888;
 }
 
+.footer-right a {
+  color: #888;
+  text-decoration: none;
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .navbar { padding: 16px 24px; }
